@@ -54,6 +54,51 @@ const swiperWork = new Swiper('.work__swiper', {
   },
 })
 
+const swiperVid = new Swiper('.vid__swiper', {
+  loop: true,
+  slidesPerView: 'auto',
+  spaceBetween: 24,
+  grabCursor: true,
+
+  pagination: {
+    el: '.vid__data .swiper-pagination',
+    type: 'fraction',
+  },
+
+  navigation: {
+    nextEl: '.vid__data .swiper-button-next',
+    prevEl: '.vid__data .swiper-button-prev',
+  },
+  on: {
+    init: function () {
+      const assets = this.el.querySelectorAll('video');
+      const activeSlide = this.slides[this.activeIndex];
+      const activeVideo = activeSlide ? activeSlide.querySelector('video') : null;
+      if (!activeVideo) return;
+
+      activeVideo.muted = true;
+      assets.forEach(video => {
+        video.pause();
+        video.currentTime = 0;
+      });
+      activeVideo.play();
+    },
+    slideChange: function () {
+      const assets = this.el.querySelectorAll('video');
+      const activeSlide = this.slides[this.activeIndex];
+      const activeVideo = activeSlide ? activeSlide.querySelector('video') : null;
+      if (!activeVideo) return;
+
+      activeVideo.muted = true;
+      assets.forEach(video => {
+        video.pause();
+        video.currentTime = 0;
+      });
+      activeVideo.play();
+    },
+  },
+})
+
 
 const swiperTestimonial = new Swiper('.service__swiper', {
   loop: true,
@@ -182,6 +227,12 @@ reveal('.work__description', {delay: .6, scrollTrigger: {trigger: '.work__descri
 reveal('.work__swiper', {delay: .9, scrollTrigger: {trigger: '.work__swiper'}})
 reveal('.work__data .swiper-pagination', {delay: .9, scrollTrigger: {trigger: '.work__data .swiper-pagination'}})
 reveal('.work__data :is(.swiper-button-prev, .swiper-button-next)', {delay: 1.2, scrollTrigger: {trigger: '.work__data'}})
+
+reveal('.vid__data .section__title', {scrollTrigger: {trigger: '.vid__data .section__title'}})
+reveal('.vid__description', {delay: .6, scrollTrigger: {trigger: '.vid__description'}})
+reveal('.vid__swiper', {delay: .9, scrollTrigger: {trigger: '.vid__swiper'}})
+reveal('.vid__data .swiper-pagination', {delay: .9, scrollTrigger: {trigger: '.vid__data .swiper-pagination'}})
+reveal('.vid__data :is(.swiper-button-prev, .swiper-button-next)', {delay: 1.2, scrollTrigger: {trigger: '.vid__data'}})
 
 reveal('.service__data .section__title', {scrollTrigger: {trigger: '.service__data .section__title'}})
 reveal('.service__plan', {delay: .6, stagger: .2, scrollTrigger: {trigger: '.service__plan'}})
