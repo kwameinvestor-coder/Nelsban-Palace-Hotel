@@ -233,6 +233,7 @@ reveal('.vid__description', {delay: .6, scrollTrigger: {trigger: '.vid__descript
 reveal('.vid__swiper', {delay: .9, scrollTrigger: {trigger: '.vid__swiper'}})
 reveal('.vid__data .swiper-pagination', {delay: .9, scrollTrigger: {trigger: '.vid__data .swiper-pagination'}})
 reveal('.vid__data :is(.swiper-button-prev, .swiper-button-next)', {delay: 1.2, scrollTrigger: {trigger: '.vid__data'}})
+reveal('.vid__mp4', {delay: .9, scrollTrigger: {trigger: '.vid__mp4'}})
 
 reveal('.service__data .section__title', {scrollTrigger: {trigger: '.service__data .section__title'}})
 reveal('.service__plan', {delay: .6, stagger: .2, scrollTrigger: {trigger: '.service__plan'}})
