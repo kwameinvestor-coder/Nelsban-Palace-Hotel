@@ -401,6 +401,7 @@ img {
 .vid__data{
   width: 100%;
   text-align: center;
+  padding-bottom: 7rem;
 }
 
 .vid__description{
@@ -762,7 +763,11 @@ img {
   }
 
 
-@media (width <= 350px){
+@media (width <= 539px){
+  .vid__description{
+  text-align: center;
+  padding-bottom: 7rem;
+}
   .expert__card{
     flex-direction: column;
     padding: 1rem 3rem 0 3rem;
@@ -805,8 +810,11 @@ img {
  .vid__data{
   width: 400px;
   margin-inline: auto;
+  padding-bottom: 6rem;
  }
+
 }
+
 
 @media (width >= 768px){
   .expert__content{
